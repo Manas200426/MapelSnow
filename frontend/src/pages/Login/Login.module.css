@@ -1,0 +1,70 @@
+.container {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, #abd2fb, #e0f1fd); /* Light blue gradient resembling a snowy sky */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerBox {
+  min-width: 480px;
+  height: fit-content;
+  width: fit-content;
+  background-color: #fff;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3); /* Increased box shadow for a sense of depth */
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer .error {
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #ff3300; /* Keeping error messages as they are for visibility */
+  text-align: center;
+}
+
+.footer button {
+  outline: none;
+  border: none;
+  background-color: #33ccff; /* Light blue button resembling snow */
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 16px;
+  width: 100%;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.footer button:disabled {
+  background-color: #bfbfbf; /* Gray for disabled state */
+}
+
+.footer button:hover {
+  background-color: #4da6ff; /* Darker blue on hover */
+}
+
+.footer p {
+  font-weight: 700;
+  color: #000;
+}
+
+.footer p span a {
+  font-weight: bold;
+  color: #33ccff; /* Light blue for links */
+  letter-spacing: 1px;
+  font-size: 1rem;
+  text-decoration: none;
+}

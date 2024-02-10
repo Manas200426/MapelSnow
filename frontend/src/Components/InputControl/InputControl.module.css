@@ -1,0 +1,29 @@
+/* Container Styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.container label {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #313131; /* Dark gray label color */
+}
+
+.container input {
+  border-radius: 5px;
+  border: 1px solid #e0e0e0; /* Light gray border */
+  outline: none;
+  padding: 10px 15px;
+  color: #000; /* Black text color */
+  transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+.container input:hover {
+  border-color: #ccc; /* Darker gray border on hover */
+}
+
+.container input:focus {
+  border-color: #9900ff; /* Purple border on focus */
+}
