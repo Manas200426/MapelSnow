@@ -1,13 +1,77 @@
 /* Home.module.css */
 
+/* Define the main color for the search button */
+:root {
+  --main-button-color: #3498DB; /* Blue color for the button */
+  --heading-color: #333; /* Dark color for headings */
+  --text-color: #555; /* Dark gray color for text */
+  --accent-color: #E74C3C; /* Red accent color */
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Apply Roboto font to the entire page */
+  color: var(--text-color); /* Set default text color */
+}
+
+/* Home.module.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #3F729B, #3498DB); /* Gradient background */
+  padding: 10px 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.navbarBrand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff; /* White color for brand */
+  text-decoration: none;
+}
+
+.navbarNav {
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s; /* Add transition for color change */
+}
+
+.navLink:hover {
+  color: #f0f8ff; /* Light blue color on hover */
+}
+
+
 .snowCanadaTheme {
-  background: linear-gradient(to bottom, #81a4cd, #f0f8ff); /* Blue gradient resembling a snowy sky */
+  background: linear-gradient(to bottom, #81a4cd, #EAF2F8);/* Blue gradient resembling a snowy sky */
   min-height: 100vh; /* Use min-height to ensure the background covers the entire viewport */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+  padding-top: 80px; /* Add padding to top to accommodate fixed navbar */
+}
+
+.heading {
+  font-size: 36px; /* Increase font size */
+  margin-bottom: 20px; /* Add margin below the heading */
+  color: var(--heading-color); /* Use custom heading color */
+  text-align: center; /* Center align the heading */
+  text-transform: uppercase; /* Uppercase the heading text */
+  letter-spacing: 2px; /* Add letter spacing for emphasis */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow effect */
 }
 
 .centeredSearchBox {
@@ -16,42 +80,119 @@
 }
 
 .searchInput {
-  padding: 10px 20px;
-  border: none;
+  padding: 12px 20px; /* Increase padding for better input appearance */
+  border: 2px solid #ccc; /* Add border for better input visibility */
   border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
   font-size: 18px;
-  margin-bottom: 20px;
-  width: 300px;
+  margin-right: 30px !important; /* Adjust margin-bottom to add space between input and button */
+  width: 400px;
+  transition: border-color 0.3s; /* Add transition for border color change */
+}
+
+.searchInput:focus {
+  border-color: var(--accent-color); /* Change border color on input focus */
 }
 
 .searchButton {
-  padding: 10px 20px;
-  background-color: #337ab7;
-  color: #fff;
+  padding: 12px 20px; /* Increase padding for better button appearance */
+  background: var(--main-button-color); /* Blue background color for button */
+  color: #fff; /* White text color */
   border: none;
   border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s, transform 0.3s; /* Add transition for smooth animation */
 }
 
 .searchButton:hover {
-  background-color: #286090;
+  background: #0056b3; /* Darker blue color on hover */
+  transform: scale(1.05); /* Add scale effect on hover */
 }
 
-/* Navbar Styles */
-.navbar {
+.errorMessage {
+  color: #ff0000; /* Red color for error message */
+  margin-top: 10px;
+}
+
+.cardContainer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #337ab7; /* Dark blue background */
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  position: fixed; /* Fixed position */
-  top: 0; /* Positioned at the top */
-  left: 0; /* Positioned at the left edge */
-  right: 0; /* Positioned at the right edge */
-  z-index: 1000; /* Ensure it's above other content */
-  width: 100%; /* Take the full width of the viewport */
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
 }
 
+.card {
+  background: #fff; /* White background for cards */
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px; /* Increase padding for more spacious look */
+  margin: 20px; /* Increase margin for more spacing between cards */
+  width: 320px; /* Adjusted width of the card */
+  max-width: calc(100% - 40px); /* Adjust width for proper spacing with increased margin */
+  overflow: hidden; /* Ensure rounded corners overflow is hidden */
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s; /* Add transitions for smooth animation */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Add hover effect to lift the card slightly */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #f8f9fa, #dee2e6); /* Gradient orb effect */
+  opacity: 0.5;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.card::before {
+  top: -20px;
+  left: -20px;
+}
+
+.card::after {
+  bottom: -20px;
+  right: -20px;
+}
+
+.cardTitle {
+  margin-top: 0;
+  color: var(--accent-color); /* Blue accent color for the card title */
+}
+
+.weatherInfo {
+  color: var(--text-color); /* Dark color for weather information */
+}
+
+/* Style the content within the card */
+.cardContent {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.cardContent p {
+  margin-bottom: 10px; /* Add bottom margin for spacing between paragraphs */
+  color: var(--text-color); /* Use default text color */
+}
+
+.cardContent .highlight {
+  color: var(--accent-color); /* Blue accent color for highlighted text */
+  font-weight: bold;
+}
+
+.heading {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: var(--heading-color);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
